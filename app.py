@@ -1897,9 +1897,18 @@ else:
                 st.markdown(f"• #{trend}")
             
             st.markdown("### Community Stats")
-            st.metric("Active Users", "1,234", "+56")
-            st.metric("Posts Today", "45", "+12")
-            st.metric"Solutions Found", "89", "+23")
+            
+            # Create three columns for metrics
+            metric_col1, metric_col2, metric_col3 = st.columns(3)
+            
+            with metric_col1:
+                st.metric("Active Users", "1,234", "+56")
+            
+            with metric_col2:
+                st.metric("Posts Today", "45", "+12")
+            
+            with metric_col3:
+                st.metric("Solutions Found", "89", "+23")
     
     elif selected == get_text('learning'):
         st.markdown(f"<h1 class='main-header'>📚 {get_text('learning')}</h1>", unsafe_allow_html=True)
